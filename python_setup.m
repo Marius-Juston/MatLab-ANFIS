@@ -52,7 +52,7 @@ for i=1:length(python_paths)
     end
 end
 
-modules = {'numpy' ,'torch'};
+modules = {'numpy' ,'torch', 'graphviz', 'auto_grad_viz', 'antecedent_layer','consequent_layer', 'fuzzy_layer' , 'anfis','joint_mamdani_membership' ,'joint_membership' ,'joint_membership_optimized' , 'utils', 'trainer','loader', 'hyperparameter_search', 'ray'};
 
 for i=1:length(modules)
     module_to_load = modules{i};

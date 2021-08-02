@@ -2,11 +2,17 @@ import torch
 import datetime
 from consequent_layer import ConsequentLayerType
 
+from joint_mamdani_membership import JointSymmetricTriangleMembership
+from joint_membership_optimized import JointTrapMembershipV2
+from trainer import make_joint_anfis, load_anfis
+
 def load_full_model(location):
+    i = [0,0,0,0]
+
     x_joint_definitons = [
-        ('distance', JointTrapMembershipV2(*output[0], constant_center=True)),
-        ('theta_far', JointTrapMembershipV2(*output[1], constant_center=True)),
-        ('theta_near', JointTrapMembershipV2(*output[2], constant_center=True))
+        ('distance', JointTrapMembershipV2(*i, constant_center=True)),
+        ('theta_far', JointTrapMembershipV2(*i, constant_center=True)),
+        ('theta_near', JointTrapMembershipV2(*i, constant_center=True))
     ]
 
     outputs = ['angular_velocity']

@@ -1,3 +1,8 @@
+import sys
+
+sys.stdout.isatty = lambda: False
+sys.stdout.encoding = sys.getdefaultencoding()
+
 import os
 from functools import partial
 

@@ -27,11 +27,11 @@ setenv('PATH', p);
 py.list; % Call a Python function to load interpreter
 pyenv
 
-module_to_load = 'numpy';
-python_module_to_use = py.importlib.import_module(module_to_load);
-py.importlib.reload(python_module_to_use);
 
-module_to_load = 'torch';
-python_module_to_use = py.importlib.import_module(module_to_load);
-py.importlib.reload(python_module_to_use);
+modules = {'numpy' ,'torch'};
 
+for i=1:length(modules)
+    module_to_load = modules{i};
+    disp(module_to_load);
+    python_module_to_use = py.importlib.import_module(module_to_load);
+end

@@ -19,7 +19,7 @@ def load_full_model(location):
 
     mambani = JointSymmetricTriangleMembership(0, 0.5, 0.25, 0.25, False, x_joint_definitons[0][1].required_dtype())
 
-    model = make_joint_anfis(x_joint_definitons, outputs, rules_type=ConsequentLayerType.MAMDANI, mamdani_defs=mambani)
+    model = make_joint_anfis(x_joint_definitons, outputs, rules_type=ConsequentLayerType.MAMDANI, mamdani_defs=mambani, matlab=True)
 
     load_anfis(model, location)
 

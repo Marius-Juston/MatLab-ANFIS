@@ -9,6 +9,7 @@
 """
 
 from collections import OrderedDict
+from array import array
 
 import numpy as np
 import torch
@@ -67,8 +68,9 @@ class JointAnfisNet(torch.nn.Module):
 
     def __init__(self, description, invardefs, outvarnames, rules_type=ConsequentLayerType.HYBRID,
                  mamdani_ruleset=None,
-                 mamdani_defs=None):
+                 mamdani_defs=None, matlab=False):
         super(JointAnfisNet, self).__init__()
+        self.matlab = matlab
         self.description = description
         self.outvarnames = outvarnames
         self.rules_type = rules_type
@@ -205,6 +207,9 @@ class JointAnfisNet(torch.nn.Module):
         self.y_pred = self.layer['output'](self.weights, self.rule_tsk)
         # y_pred = torch.bmm(self.rule_tsk, self.weights.unsqueeze(2))
         # self.y_pred = y_pred.squeeze(2)
+
+        if self.matlab:
+            return array('d', self.y_pred)
         return self.y_pred
 
 

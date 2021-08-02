@@ -13,8 +13,8 @@ from ray.tune import CLIReporter
 from ray.tune.schedulers import ASHAScheduler
 from ray.tune.stopper import FunctionStopper
 
-from anfis.consequent_layer import ConsequentLayerType
-from anfis.utils import calc_error, save_fuzzy_membership_functions
+from consequent_layer import ConsequentLayerType
+from utils import calc_error, save_fuzzy_membership_functions
 
 
 def train_anfis(config: dict, train_data=None, criterion=None, model_creator=None, num_epochs=1000,

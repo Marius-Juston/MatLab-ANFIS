@@ -14,10 +14,10 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
-from anfis.antecedent_layer import AntecedentLayer, MamdaniAntecedentLayer
-from anfis.consequent_layer import ConsequentLayer, SymmetricWeightsConsequentLayer, ConsequentLayerType, \
+from antecedent_layer import AntecedentLayer, MamdaniAntecedentLayer
+from consequent_layer import ConsequentLayer, SymmetricWeightsConsequentLayer, ConsequentLayerType, \
     PlainConsequentLayer, MamdaniConsequentLayer
-from anfis.fuzzy_layer import JointFuzzifyLayer
+from fuzzy_layer import JointFuzzifyLayer
 
 dtype = torch.float
 

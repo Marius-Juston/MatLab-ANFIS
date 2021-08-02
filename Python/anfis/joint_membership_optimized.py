@@ -3,7 +3,7 @@ from collections import OrderedDict
 import numpy as np
 import torch
 
-from anfis.joint_membership import _mk_param, JointMembership
+from joint_membership import _mk_param, JointMembership
 
 
 class JointDiffSigmoidMembershipV2(JointMembership):

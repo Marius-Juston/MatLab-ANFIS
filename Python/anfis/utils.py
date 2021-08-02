@@ -11,8 +11,8 @@ import torch
 import torch.nn.functional as F
 from torch.utils.tensorboard import SummaryWriter
 
-from anfis.consequent_layer import ConsequentLayerType
-from anfis.joint_membership import JointMembership
+from consequent_layer import ConsequentLayerType
+from joint_membership import JointMembership
 
 dtype = torch.float
 

@@ -3,7 +3,7 @@ from functools import partial
 
 import torch
 
-from anfis.joint_membership import _mk_param
+from joint_membership import _mk_param
 
 
 class JointMamdaniMembership(torch.nn.Module, ABC):

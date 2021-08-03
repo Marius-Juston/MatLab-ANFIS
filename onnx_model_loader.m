@@ -1,4 +1,5 @@
-params = importONNXFunction(modelfile,'ANFISFcn');
+modelfile = 'C:\Users\mariu\Documents\GitHub\ANFIS\tests\anfis.onnx';
+anifs_params = importONNXFunction(modelfile,'ANFISFcn');
 
 file = 'ANFISFcn.m';
 
@@ -12,4 +13,4 @@ fprintf(fid,'%s',f);
 fclose(fid);
 
 
-ANFISFcn([[0,0,0]], params)
+ANFISFcn([[0,0,0]], anifs_params)

@@ -1,4 +1,4 @@
-modelfile = 'C:\Users\mariu\Documents\GitHub\ANFIS\tests\anfis.onnx';
+modelfile = 'models/anfis.onnx';
 anfis_params = importONNXFunction(modelfile,'ANFISFcn');
 
 file = 'ANFISFcn.m';

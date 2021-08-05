@@ -8,8 +8,8 @@
         https://github.com/twmeggs/anfis
 """
 
-from collections import OrderedDict
 from array import array
+from collections import OrderedDict
 
 import numpy as np
 import torch

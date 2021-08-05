@@ -3,14 +3,14 @@ import os
 import time
 
 import torch
+from auto_grad_viz import get_gradient_values
+from auto_grad_viz import make_dot
 from torch.utils.tensorboard import SummaryWriter
 
 from anfis import JointAnfisNet
 from consequent_layer import ConsequentLayerType
 from utils import plot_fuzzy_variables, plot_fuzzy_consequent, plot_fuzzy_membership_functions, calc_error, \
     plot_summary_results, save_fuzzy_membership_functions
-from auto_grad_viz import get_gradient_values
-from auto_grad_viz import make_dot
 
 
 def profile_model(log_dir, model, data, optimizer, criterion, wait=1, warm_up=1, active=5, repeat=2):
@@ -185,6 +185,7 @@ def train_anfis(model, data, epochs=500, show_plots=False, lr=1e-4, momentum=0.9
                      summary_frequency=summary_frequency, summary_figure_frequency=summary_figure_frequency,
                      checkpoint_save_frequency=checkpoint_save_frequency)
 
+
 def save_anfis(model, checkpoint):
     layer_type = model.rules_type
 
@@ -207,8 +208,9 @@ def load_anfis(model, file):
         model.load_state_dict(data_dict)
 
 
-def make_joint_anfis(variable_joint_fuzzy_definitons, outputs, rules_type=ConsequentLayerType.PLAIN, mamdani_defs=None,matlab=False):
+def make_joint_anfis(variable_joint_fuzzy_definitons, outputs, rules_type=ConsequentLayerType.PLAIN, mamdani_defs=None,
+                     matlab=False):
     model = JointAnfisNet('Simple joint classifier', variable_joint_fuzzy_definitons, outputs, rules_type=rules_type,
-                          mamdani_defs=mamdani_defs,matlab=matlab)
+                          mamdani_defs=mamdani_defs, matlab=matlab)
 
     return model

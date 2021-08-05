@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Fuzzy.iml" filepath="$PROJECT_DIR$/.idea/Fuzzy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MatLab-ANFIS.iml" filepath="$PROJECT_DIR$/.idea/MatLab-ANFIS.iml" />
     </modules>
   </component>
 </project>

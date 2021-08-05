@@ -1,4 +1,4 @@
-d% this function can be used after simulations to compare robot path with
+% this function can be used after simulations to compare robot path with
 % desired path
 function plotpath_dyn()
 
